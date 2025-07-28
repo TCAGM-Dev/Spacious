@@ -54,8 +54,10 @@ public class Vec2f {
 		return Math.sqrt(this.squaredMagnitude());
 	}
 
-	public boolean equals(Vec2f other) {
-		return this.x == other.x && this.y == other.y;
+	@Override
+	public boolean equals(Object other) {
+		if (other instanceof Vec2f otherVector) return this.x == otherVector.x && this.y == otherVector.y;
+		else return false;
 	}
 	public String toString() {
 		return String.format("(%f, %f)", this.x, this.y);

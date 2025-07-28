@@ -41,9 +41,11 @@ public class Vec2i {
 	public double magnitude() {
 		return Math.sqrt(this.squaredMagnitude());
 	}
-	
-	public boolean equals(Vec2i other) {
-		return this.x == other.x && this.y == other.y;
+
+	@Override
+	public boolean equals(Object other) {
+		if (other instanceof Vec2i otherVector) return this.x == otherVector.x && this.y == otherVector.y;
+		else return false;
 	}
 	public String toString() {
 		return String.format("(%d, %d)", this.x, this.y);
