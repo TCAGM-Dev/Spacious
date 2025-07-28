@@ -32,7 +32,7 @@ public class Vec2i {
 	}
 
 	public Vec2i modulo(Vec2i divisor) {
-		return new Vec2i(this.x % divisor.x, this.y % divisor.y);
+		return new Vec2i(Math.floorMod(this.x, divisor.x), Math.floorMod(this.y, divisor.y));
 	}
 
 	public int squaredMagnitude() {
@@ -41,7 +41,7 @@ public class Vec2i {
 	public double magnitude() {
 		return Math.sqrt(this.squaredMagnitude());
 	}
-
+	
 	public boolean equals(Vec2i other) {
 		return this.x == other.x && this.y == other.y;
 	}
